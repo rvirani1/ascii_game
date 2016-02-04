@@ -1,0 +1,11 @@
+<p>
+  Your current score is:
+  <%= session["score"] %>
+</p>
+<% if @correct %>
+  <h1>You got it correct</h1>
+<% else %>
+  <h1>You got it wrong</h1>
+<% end %>
+
+<a href="/">Next Round</a>

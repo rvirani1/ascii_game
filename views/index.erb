@@ -1,0 +1,11 @@
+<p>
+  Your current score is:
+  <%= session["score"] %>
+</p>
+<pre>
+  <%= ASCII_ART[session["ascii"]] %>
+</pre>
+<form action="/submission" method="post">
+  <input type="text" name="guess" />
+  <button>Submit</button>
+</form>
