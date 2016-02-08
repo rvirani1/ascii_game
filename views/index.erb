@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+
 <p>
   Your current score is:
   <%= session["score"] %>
@@ -8,9 +11,14 @@
 <form action="/submission" method="post">
   <label>Please choose one of the answers below</label>
   <% @choices.each do |choice| %>
-    <input type="radio" name="guess" value="<%= choice %>">
-      <%= choice %>
-    </input>
+    <div class="form-group">
+      <div class="radio">
+        <label>
+          <input type="radio" name="guess" value="<%= choice %>"></input>
+            <%= choice %>
+        </label>
+      </div>
+    </div>
   <% end %>
-  <button>Submit</button>
+  <button type="submit" class="btn btn-default">Submit</button>
 </form>
