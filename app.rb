@@ -14,11 +14,11 @@ get("/") do
   while @choices.count < 5
     new_choice = random_ascii_name
     if @choices.include?(new_choice)
-      next
     else
       @choices.push(new_choice)
     end
   end
+  @choices = @choices.shuffle
   # Finish building my choices array
   erb :index
 end

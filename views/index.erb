@@ -6,6 +6,11 @@
   <%= ASCII_ART[session["ascii"]] %>
 </pre>
 <form action="/submission" method="post">
-  <input type="text" name="guess" />
+  <label>Please choose one of the answers below</label>
+  <% @choices.each do |choice| %>
+    <input type="radio" name="guess" value="<%= choice %>">
+      <%= choice %>
+    </input>
+  <% end %>
   <button>Submit</button>
 </form>
