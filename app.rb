@@ -10,7 +10,7 @@ get("/") do
   end
   # Build my choices array
   @choices = []
-  @choices.push(session["ascii"]) # @choices = ["snoopy", "garfield"]
+  @choices.push(session["ascii"])
   while @choices.count < 5
     new_choice = random_ascii_name
     if @choices.include?(new_choice)
@@ -19,8 +19,6 @@ get("/") do
       @choices.push(new_choice)
     end
   end
-  # @choices = ["snoopy", ""]
-
   # Finish building my choices array
   erb :index
 end
