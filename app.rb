@@ -13,6 +13,12 @@ get("/game") do
   if session["score"] == nil
     session["score"] = 0
   end
+
+  # Equivalent to session["missed"] ||= 0
+  if session["missed"] == nil
+    session["missed"] = 0
+  end
+
   # Build my choices array
   @choices = []
   @choices.push(session["ascii"])
@@ -34,7 +40,7 @@ post("/submission") do
     session["score"] += 1
   else
     @correct = false
-    session["score"] -= 1
+    session["missed"] += 1
   end
 
   erb :submission
