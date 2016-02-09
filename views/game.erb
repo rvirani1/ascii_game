@@ -8,6 +8,10 @@
         Your current score is:
         <%= session["score"] %>
       </p>
+      <p>
+        You've missed:
+        <%= session["missed"] %>
+      </p>
       <pre>
         <%= ASCII_ART[session["ascii"]] %>
       </pre>
