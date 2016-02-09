@@ -20,7 +20,7 @@ get("/") do
   end
   @choices = @choices.shuffle
   # Finish building my choices array
-  erb :index
+  erb :game
 end
 
 post("/submission") do
