@@ -4,6 +4,11 @@ require_relative("art")
 enable :sessions
 
 get("/") do
+
+  erb :index
+end
+
+get("/game") do
   session["ascii"] = random_ascii_name
   if session["score"] == nil
     session["score"] = 0
