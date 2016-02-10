@@ -18,7 +18,16 @@
       <% else %>
         <h1>You got it wrong</h1>
       <% end %>
-      <a href="/game">Next Round</a>
+
+      <% if session["score"] >= 5 %>
+        <h1>...And you won!</h1>
+        <a href="/">New Game</a>
+      <% elsif session["missed"] >= 3 %>
+        <h1>...And you lost!</h1>
+        <a href="/">New Game</a>
+      <% else %>
+        <a href="/game">Next Round</a>
+      <% end %>
     </div>
     <div class="col-md-3"></div>
   </div>

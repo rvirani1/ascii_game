@@ -4,7 +4,9 @@ require_relative("art")
 enable :sessions
 
 get("/") do
-
+  # Reset the game
+  session["score"] = 0
+  session["missed"] = 0
   erb :index
 end
 
@@ -30,7 +32,6 @@ get("/game") do
     end
   end
   @choices = @choices.shuffle
-  # Finish building my choices array
   erb :game
 end
 
