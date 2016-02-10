@@ -8,10 +8,10 @@ reprsents. If they are correct, their score increases.
 * Add `Gemfile`
 * Execute `bundle install`
 * Execute `git init`
+* Execute `heroku create <name>`
 
 
 ## Per Code Change
 * Execute `git add .`
 * Execute `git commit -m "Add Files"`
-* Execute `heroku create <name>`
 * Execute `git push heroku master`
